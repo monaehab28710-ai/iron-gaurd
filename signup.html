@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Iron Guarding System - Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="signup-page">
+    <div class="login-container">
+        <!-- Left Section: Branding -->
+        <div class="login-left">
+            <div class="login-brand">
+                <i class="fas fa-burn"></i>
+                <h1 data-i18n="brandTitle">Smart Iron Guard</h1>
+                <p data-i18n="brandSubtitle">Real-time monitoring system for industrial safety</p>
+            </div>
+            <div class="login-features">
+                <div class="feature-item">
+                    <i class="fas fa-thermometer-half"></i>
+                    <span data-i18n="featureTemperature">Real-time Temperature Tracking</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-droplet"></i>
+                    <span data-i18n="featureHumidity">Humidity Monitoring</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span data-i18n="featureAlerts">Safety Status Alerts</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span data-i18n="featureAnalytics">Data Analytics & Reports</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Signup Form -->
+        <div class="login-right">
+            <div class="login-card">
+                <h2 data-i18n="signupTitle">Create Account</h2>
+                <p class="login-subtitle" data-i18n="signupSubtitle">Register to access live monitoring</p>
+
+                <form id="signupForm" class="login-form">
+                    <div class="form-group">
+                        <label for="signupUsername">
+                            <i class="fas fa-user"></i> <span data-i18n="usernameLabel">Username</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="signupUsername" 
+                            placeholder="Choose a username"
+                            data-i18n-placeholder="usernamePlaceholder"
+                            required
+                        >
+                        <span class="error-message" id="signupUsernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">
+                            <i class="fas fa-envelope"></i> <span data-i18n="emailLabel">Email</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="signupEmail" 
+                            placeholder="Enter your email address"
+                            data-i18n-placeholder="emailPlaceholder"
+                            required
+                        >
+                        <span class="error-message" id="signupEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">
+                            <i class="fas fa-lock"></i> <span data-i18n="passwordLabel">Password</span>
+                        </label>
+                        <input 
+                            type="password" 
+                            id="signupPassword" 
+                            placeholder="Enter your password"
+                            data-i18n-placeholder="passwordPlaceholder"
+                            required
+                        >
+                        <span class="error-message" id="signupPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">
+                            <i class="fas fa-lock"></i> <span data-i18n="confirmPasswordLabel">Confirm Password</span>
+                        </label>
+                        <input 
+                            type="password" 
+                            id="signupConfirmPassword" 
+                            placeholder="Confirm your password"
+                            data-i18n-placeholder="confirmPasswordPlaceholder"
+                            required
+                        >
+                        <span class="error-message" id="signupConfirmPasswordError"></span>
+                    </div>
+
+                    <button type="submit" class="login-btn" id="signupBtn">
+                        <span data-i18n="signUp">Sign Up</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="error-alert" id="signupError"></div>
+                </form>
+
+                <p class="page-switch">
+                    <span data-i18n="haveAccount">Already have an account?</span>
+                    <a href="index.html" data-i18n="signInLink">Login</a>
+                </p>
+            </div>
+
+            <p class="login-footer" data-i18n="footer">© 2026 Smart Iron Guarding System. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p data-i18n="loadingAuthenticating">Authenticating...</p>
+    </div>
+
+    <!-- Toasts -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
